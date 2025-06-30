@@ -1,14 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <!-- 
+        ZAROORI HIDAYAT:
+        Yeh script aapke Ad Network se milegi. Iske bina ad kaam nahi karega.
+        Is comment ko hata kar yahan woh script paste karein.
+    -->
+    <!-- <script src="https://ad.provider.com/library.js"></script> -->
+    <script>
+        // Yeh sirf testing ke liye hai. Asal function aapke Ad Network ki file se aayega.
+        function show_9508247() {
+            console.log("AD: Rewarded Ad Chal Raha Hai (Testing Mode).");
+            return Promise.resolve(); // For testing, we immediately say the ad was 'watched'.
+        }
+    </script>
+
+
+
+
+
+
+
+
+
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jafari Deals - 3D Holo-Deck</title>
+    <title>Jafari Deals - The Complete Website</title>
     
+    <!-- Professional Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
     
+    <!-- Syntax Highlighting for Code Viewer -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 
     <style>
@@ -50,7 +77,6 @@
             position: relative;
         }
 
-        /* --- Desktop View: The 3D Holo-Deck --- */
         .holo-deck {
             width: 100%;
             height: 500px;
@@ -78,77 +104,60 @@
         }
         
         .card:hover { border-color: var(--gold); box-shadow: 0 0 25px var(--glow-color); }
-
         .card-image { width: 100%; height: 50%; background-size: cover; background-position: center top; }
         .card-content { padding: 20px; }
         .card-content h3 { color: var(--gold); margin-bottom: 10px; }
         .card-content p { font-size: 0.9rem; color: var(--light-grey); }
         .card-content .price { font-size: 1.2rem; font-weight: 700; color: var(--silver); margin-top: 20px; }
 
-        /* Navigation Buttons */
-        .nav-btn {
-            position: fixed;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(255,255,255,0.1);
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            z-index: 100;
-            color: var(--silver);
-            font-size: 2rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            backdrop-filter: blur(5px);
-            transition: all 0.3s ease;
-        }
+        .nav-btn { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 50%; width: 50px; height: 50px; cursor: pointer; z-index: 100; color: var(--silver); font-size: 2rem; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(5px); transition: all 0.3s ease; }
         .nav-btn:hover { background: var(--gold); color: var(--dark-bg); transform: translateY(-50%) scale(1.1); }
         #prev-btn { left: 5%; }
         #next-btn { right: 5%; }
 
-        /* [PREVIOUS POPUP AND MODAL CSS IS UNCHANGED AND MINIFIED FOR BREVITY] */
-        .welcome-popup{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%) scale(.9);background:rgba(20,20,25,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,184,0,.2);border-radius:15px;padding:40px;z-index:1000;text-align:center;width:90%;max-width:500px;opacity:0;visibility:hidden;transition:all .5s cubic-bezier(.165,.84,.44,1);box-shadow:0 0 50px rgba(0,0,0,.5),0 0 20px var(--glow-color)}.welcome-popup.show{transform:translate(-50%,-50%) scale(1);opacity:1;visibility:visible}.welcome-popup h2{font-size:2rem;color:var(--gold);margin-bottom:10px}.welcome-popup p{color:var(--light-grey);margin-bottom:25px;line-height:1.6}.social-join-section{display:flex;flex-direction:column;gap:15px;margin-bottom:30px}.social-link{display:flex;align-items:center;padding:12px 20px;background:rgba(255,255,255,.05);border-radius:10px;text-decoration:none;color:var(--silver);font-weight:500;transition:background .3s ease;border:1px solid transparent}.social-link:hover{background:rgba(255,255,255,.1)}.social-link.completed{border:1px solid var(--success-color)}.social-icon{width:24px;height:24px;margin-right:15px}.social-icon svg{width:100%;height:100%}.status-icon{margin-left:auto;width:24px;height:24px;border:2px solid var(--error-color);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--error-color);font-weight:700;font-size:1rem;transition:all .4s ease}.social-link.completed .status-icon{background-color:var(--success-color);border-color:var(--success-color);color:#fff;transform:rotate(360deg)}.popup-close-btn{background:var(--gold);color:var(--dark-bg);border:none;padding:14px 40px;border-radius:50px;cursor:pointer;font-weight:600;transition:all .3s ease;width:100%;font-size:1rem}.popup-close-btn:hover:not(:disabled){transform:scale(1.05);box-shadow:0 0 15px var(--glow-color)}.popup-close-btn:disabled{background:#555;color:#999;cursor:not-allowed;opacity:.7}.popup-close-btn:not(:disabled){animation:pulse-gold 2s infinite}@keyframes pulse-gold{0%{box-shadow:0 0 5px var(--glow-color)}50%{box-shadow:0 0 20px var(--glow-color)}100%{box-shadow:0 0 5px var(--glow-color)}}.code-modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,.7);backdrop-filter:blur(10px);z-index:2000;display:flex;justify-content:center;align-items:center;opacity:0;visibility:hidden;transition:opacity .4s ease}.code-modal.show{opacity:1;visibility:visible}.code-modal-content{width:90%;max-width:1000px;height:80vh;background:#1d1f21;border-radius:10px;border:1px solid var(--gold);display:flex;flex-direction:column;box-shadow:0 0 50px rgba(0,0,0,.8);transform:scale(.9);transition:transform .4s cubic-bezier(.165,.84,.44,1)}.code-modal.show .code-modal-content{transform:scale(1)}.code-modal-header{padding:15px 20px;border-bottom:1px solid #333;display:flex;justify-content:space-between;align-items:center}.code-modal-header h3{color:var(--gold)}#close-modal-btn{background:0 0;border:none;color:var(--silver);font-size:2rem;cursor:pointer;transition:all .3s ease}#close-modal-btn:hover{color:var(--gold);transform:rotate(90deg)}.code-viewer{flex-grow:1;overflow:auto}pre[class*=language-]{margin:0!important;border-radius:0!important;height:100%;background:0 0!important;font-family:'Fira Code',monospace;font-size:14px}
+        .welcome-popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(.9); background: rgba(20, 20, 25, .7); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 184, 0, .2); border-radius: 15px; padding: 40px; z-index: 1000; text-align: center; width: 90%; max-width: 500px; opacity: 0; visibility: hidden; transition: all .5s cubic-bezier(.165, .84, .44, 1); box-shadow: 0 0 50px rgba(0, 0, 0, .5), 0 0 20px var(--glow-color); }
+        .welcome-popup.show { transform: translate(-50%, -50%) scale(1); opacity: 1; visibility: visible; }
+        .welcome-popup h2 { font-size: 2rem; color: var(--gold); margin-bottom: 10px; }
+        .welcome-popup p { color: var(--light-grey); margin-bottom: 25px; line-height: 1.6; }
 
-        /* ============================================== */
-        /* ===          MOBILE OPTIMIZATION           === */
-        /* ============================================== */
-        @media (max-width: 768px) {
-            body {
-                perspective: 800px; /* Thori kam 3D depth mobile ke liye */
-            }
+        .social-join-section { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+        .social-link { display: flex; align-items: center; padding: 12px 20px; background: rgba(255, 255, 255, .05); border-radius: 10px; text-decoration: none; color: var(--silver); font-weight: 500; transition: background .3s ease; border: 1px solid transparent; }
+        .social-link:hover { background: rgba(255, 255, 255, .1); }
+        .social-link.completed { border: 1px solid var(--success-color); }
+        .social-icon { width: 24px; height: 24px; margin-right: 15px; }
+        .social-icon svg { width: 100%; height: 100%; }
+        .status-icon { margin-left: auto; width: 24px; height: 24px; border: 2px solid var(--error-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--error-color); font-weight: 700; font-size: 1rem; transition: all .4s ease; }
+        .social-link.completed .status-icon { background-color: var(--success-color); border-color: var(--success-color); color: #fff; transform: rotate(360deg); }
+        
+        .popup-close-btn { background: var(--gold); color: var(--dark-bg); border: none; padding: 14px 40px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all .3s ease; width: 100%; font-size: 1rem; }
+        .popup-close-btn:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 0 15px var(--glow-color); }
+        .popup-close-btn:disabled { background: #555; color: #999; cursor: not-allowed; opacity: .7; }
+        .popup-close-btn:not(:disabled) { animation: pulse-gold 2s infinite; }
+        @keyframes pulse-gold { 0% { box-shadow: 0 0 5px var(--glow-color) } 50% { box-shadow: 0 0 20px var(--glow-color) } 100% { box-shadow: 0 0 5px var(--glow-color) } }
 
-            .card {
-                width: 70vw; /* Card ko screen ke hisab se chota karein */
-                height: 400px;
-                margin-top: -200px;
-                margin-left: -35vw;
-                -webkit-box-reflect: unset; /* Reflection mobile par hata dein */
-            }
+        .code-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, .7); backdrop-filter: blur(10px); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; visibility: hidden; transition: opacity .4s ease; }
+        .code-modal.show { opacity: 1; visibility: visible; }
+        .code-modal-content { width: 90%; max-width: 1000px; height: 80vh; background: #1d1f21; border-radius: 10px; border: 1px solid var(--gold); display: flex; flex-direction: column; box-shadow: 0 0 50px rgba(0, 0, 0, .8); transform: scale(.9); transition: transform .4s cubic-bezier(.165, .84, .44, 1); }
+        .code-modal.show .code-modal-content { transform: scale(1); }
+        .code-modal-header { padding: 15px 20px; border-bottom: 1px solid #333; display: flex; justify-content: space-between; align-items: center; gap: 15px; }
+        .code-modal-header h3 { color: var(--gold); margin-right: auto; }
+        #close-modal-btn { background: 0 0; border: none; color: var(--silver); font-size: 2rem; cursor: pointer; transition: all .3s ease; }
+        #close-modal-btn:hover { color: var(--gold); transform: rotate(90deg); }
+        .code-viewer { flex-grow: 1; overflow: auto; }
+        pre[class*="language-"] { margin: 0 !important; border-radius: 0 !important; height: 100%; background: 0 0 !important; font-family: 'Fira Code', monospace; font-size: 14px; }
+        
+        #copy-code-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: var(--silver); border-radius: 5px; padding: 5px 10px; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; }
+        #copy-code-btn:hover { background: var(--gold); color: var(--dark-bg); }
+        #copy-code-btn .copy-icon { width: 16px; height: 16px; }
 
-            .card-content p { font-size: 0.8rem; }
-            
-            .nav-btn {
-                top: auto;
-                bottom: 8%; /* Buttons ko neeche le aaein */
-                transform: translateY(0);
-                width: 55px;
-                height: 55px;
-            }
-            #prev-btn { left: 10%; }
-            #next-btn { right: 10%; }
-            
-            .welcome-popup h2 { font-size: 1.8rem; }
-            .welcome-popup p { font-size: 0.9rem; }
-        }
+        @media (max-width: 768px) { body { perspective: 800px; } .card { width: 70vw; height: 400px; margin-top: -200px; margin-left: -35vw; -webkit-box-reflect: unset; } .card-content p { font-size: .8rem; } .nav-btn { top: auto; bottom: 8%; transform: translateY(0); width: 55px; height: 55px; } #prev-btn { left: 10%; } #next-btn { right: 10%; } .welcome-popup h2 { font-size: 1.8rem; } .welcome-popup p { font-size: .9rem; } }
     </style>
 </head>
+
 <body>
+  
 
     <div class="main-container">
-        <!-- [HTML REMAINS THE SAME] -->
         <div style="position: fixed; top: 20px; left: 20px; z-index: 500;">
             <h1 style="font-size: 1.5rem; color: var(--silver);">JAFARI <span style="color: var(--gold);">DEALS</span></h1>
         </div>
@@ -156,78 +165,115 @@
         <button id="prev-btn" class="nav-btn"><</button>
         <button id="next-btn" class="nav-btn">></button>
     </div>
-    <div class="welcome-popup" id="welcome-popup"><img src="https://i.imgur.com/gJeZmSH.png" alt="Jafari Deals Logo" width="80" style="margin-bottom:10px"><h2>Unlock The Portal</h2><p>Join our community to unlock access to exclusive codes and deals. Click each link to activate the portal.</p><div class="social-join-section"><a href="#" target="_blank" class="social-link" id="telegram-link"><span class="social-icon"><svg fill="#0088cc" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.58c-.28 1.13-1.04 1.4-1.74.88l-4.98-3.65l-2.32 2.23c-.25.24-.47.47-.97.47z"/></svg></span> Join our Telegram Channel<span class="status-icon" id="telegram-status">✗</span></a><a href="#" target="_blank" class="social-link" id="youtube-link"><span class="social-icon"><svg fill="#FF0000" viewBox="0 0 24 24"><path d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.75C18.25 5 12 5 12 5s-6.25 0-7.82.44C3.32 5.67 2.65 6.33 2.42 7.19C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.9 1.52 1.76 1.75C5.75 19 12 19 12 19s6.25 0 7.82-.44c.86-.23 1.52-.9 1.75-1.75C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.5 15.5V8.5l6.5 3.5l-6.5 3.5z"/></svg></span> Subscribe on YouTube<span class="status-icon" id="youtube-status">✗</span></a><a href="#" target="_blank" class="social-link" id="tiktok-link"><span class="social-icon"><svg fill="#fff" viewBox="0 0 24 24"><path d="M16.6 5.82h2.51v3.25c-1.42.27-2.43.8-3.04 1.59s-.91 1.87-.91 3.24v6.01h-3.41V2.8h3.41v7.65c.21-1.99 1.1-3.56 2.65-4.73s3.47-1.74 5.75-1.74v3.25c-1.39 0-2.58.29-3.56.88s-1.74 1.42-2.27 2.51z"/></svg></span> Follow us on TikTok<span class="status-icon" id="tiktok-status">✗</span></a></div><button id="close-popup-btn" class="popup-close-btn">Explore Website</button></div>
-    <div class="code-modal" id="code-modal"><div class="code-modal-content"><div class="code-modal-header"><h3 id="modal-title">Source Code</h3><button id="close-modal-btn">×</button></div><div class="code-viewer"><pre><code id="modal-code-content" class="language-html"></code></pre></div></div></div>
 
+    <div class="welcome-popup" id="welcome-popup">
+        <img src="https://i.imgur.com/gJeZmSH.png" alt="Jafari Deals Logo" width="80" style="margin-bottom:10px">
+        <h2>Unlock The Portal</h2>
+        <p>Join our community to unlock access. Click each link to activate the portal. An ad will be shown as a final step.</p>
+        <div class="social-join-section">
+            <a href="https://t.me/YOUR_TELEGRAM_CHANNEL" target="_blank" class="social-link" id="telegram-link"><span class="social-icon"><svg fill="#0088cc" viewBox="0 0 24 24"><path d="M9.78 18.65l.28-4.23l7.68-6.92c.34-.31-.07-.46-.52-.19L7.74 13.3L3.64 12c-.88-.25-.89-.86.2-1.3l15.97-6.16c.73-.33 1.43.18 1.15 1.3l-2.72 12.58c-.28 1.13-1.04 1.4-1.74.88l-4.98-3.65l-2.32 2.23c-.25.24-.47.47-.97.47z"/></svg></span> Join our Telegram<span class="status-icon" id="telegram-status">✗</span></a>
+            <a href="https://www.youtube.com/c/YOUR_YOUTUBE_CHANNEL" target="_blank" class="social-link" id="youtube-link"><span class="social-icon"><svg fill="#FF0000" viewBox="0 0 24 24"><path d="M21.58 7.19c-.23-.86-.9-1.52-1.76-1.75C18.25 5 12 5 12 5s-6.25 0-7.82.44C3.32 5.67 2.65 6.33 2.42 7.19C2 8.75 2 12 2 12s0 3.25.42 4.81c.23.86.9 1.52 1.76 1.75C5.75 19 12 19 12 19s6.25 0 7.82-.44c.86-.23 1.52-.9 1.75-1.75C22 15.25 22 12 22 12s0-3.25-.42-4.81zM9.5 15.5V8.5l6.5 3.5l-6.5 3.5z"/></svg></span> Subscribe on YouTube<span class="status-icon" id="youtube-status">✗</span></a>
+            <a href="https://www.tiktok.com/@YOUR_TIKTOK_ACCOUNT" target="_blank" class="social-link" id="tiktok-link"><span class="social-icon"><svg fill="#fff" viewBox="0 0 24 24"><path d="M16.6 5.82h2.51v3.25c-1.42.27-2.43.8-3.04 1.59s-.91 1.87-.91 3.24v6.01h-3.41V2.8h3.41v7.65c.21-1.99 1.1-3.56 2.65-4.73s3.47-1.74 5.75-1.74v3.25c-1.39 0-2.58.29-3.56.88s-1.74 1.42-2.27 2.51z"/></svg></span> Follow us on TikTok<span class="status-icon" id="tiktok-status">✗</span></a>
+        </div>
+        <button id="close-popup-btn" class="popup-close-btn">Explore Website</button>
+    </div>
+
+    <div class="code-modal" id="code-modal">
+        <div class="code-modal-content">
+            <div class="code-modal-header">
+                <h3 id="modal-title">Source Code</h3>
+                <button id="copy-code-btn"><svg class="copy-icon" fill="currentColor" viewBox="0 0 20 20"><path d="M7 2a2 2 0 012-2h4a2 2 0 012 2v2h-2V2H9v2H7V2z"></path><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2H4zm2 2a1 1 0 00-1 1v6a1 1 0 102 0V7a1 1 0 00-1-1z" clip-rule="evenodd"></path></svg><span id="copy-btn-text">Copy</span></button>
+                <button id="close-modal-btn">×</button>
+            </div>
+            <div class="code-viewer"><pre><code id="modal-code-content" class="language-html"></code></pre></div>
+        </div>
+    </div>
+
+    <!-- Scripts for functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
-    // === JAVASCRIPT LOGIC ===
+    // =================================================================
+    // =================================================================
+    // === AAPKA CONTROL PANEL: POSTS KO YAHAN SE EDIT KAREIN ===
+    // =================================================================
+    // =================================================================
+    //
+    // YAHAN AAP APNI WEBSITE KI SAARI POSTS (PRODUCTS) ADD, EDIT, YA DELETE KAR SAKTE HAIN.
+    //
+    // Har post ka structure aesa hai:
+    // {
+    //     image: 'IMAGE KA DIRECT LINK',
+    //     title: 'POST KA TITLE',
+    //     description: 'POST KI CHOTI SI TAFSEEL',
+    //     price: 'POST KI QEEMAT',
+    //     code: `YAHAN POORA SOURCE CODE PASTE KAREIN`
+    // },  <-- Har post ke baad yeh comma (,) zaroor lagayein, siwaye aakhri post ke.
+    //
+    // Image lagane ke liye: https://imgur.com/upload par image daalein,
+    // phir image par right-click karke "Copy Image Address" karein aur yahan paste kar dein.
+    //
+    const products = [
+        // --- PEHLI POST ---
+        {
+            image: 'https://cdn.dribbble.com/users/2401141/screenshots/14951716/media/10d611848243621539151121d155156a.png',
+            title: 'E-commerce Dashboard UI',
+            description: 'A modern and clean UI kit for e-commerce dashboards, built with pure CSS Flexbox and Grid.',
+            price: '$49',
+            code: `<div class="dashboard-container">
+    <aside class="sidebar">
+        <!-- Sidebar content goes here -->
+    </aside>
+    <main class="main-content">
+        <!-- Main dashboard content -->
+    </main>
+</div>`
+        },
 
-    // Data and DOM Elements
-    const products = [ { image: 'https://cdn.dribbble.com/users/2401141/screenshots/14951716/media/10d611848243621539151121d155156a.png?compress=1&resize=1200x900&vertical=top', title: 'E-commerce Dashboard UI', description: 'A modern and clean UI kit for e-commerce dashboards.', price: '$49', code: `<!-- HTML Structure -->...` }, { image: 'https://cdn.dribbble.com/users/3848835/screenshots/15293118/media/639c05459a352b2f6b8b15a452a35368.png?compress=1&resize=1200x900&vertical=top', title: 'SaaS Landing Page', description: 'A stunning landing page template for your next SaaS project.', price: '$29', code: `// JavaScript for animations...` }, { image: 'https://cdn.dribbble.com/users/418188/screenshots/15103416/media/a953a52093ea6d933e4ad8d89a6913e3.png?compress=1&resize=1200x900&vertical=top', title: 'Mobile Banking App', description: 'Source code for a sleek and secure mobile banking application.', price: '$99', code: `/* CSS for Glassmorphism Effect */...` }, { image: 'https://cdn.dribbble.com/users/2056840/screenshots/15256372/media/3160b3a37e5e3474a2a191f6120e28f7.png?compress=1&resize=1200x900&vertical=top', title: 'Portfolio Website Template', description: 'A creative and minimalist portfolio template for developers.', price: '$19', code: `// React Component Example...` }, { image: 'https://cdn.dribbble.com/users/105341/screenshots/15233199/media/3e5229656a8439563f82a7a401b34a6d.png?compress=1&resize=1200x900&vertical=top', title: 'Project Management Tool', description: 'A complete Kanban board style project management tool.', price: '$79', code: `// Drag and Drop Logic...` } ];
-    const holoDeck = document.querySelector('.holo-deck');
-    const prevBtn = document.getElementById('prev-btn');
-    const nextBtn = document.getElementById('next-btn');
-    let currentIndex = 0;
-
-    // --- Build Cards and Update Deck Functions ---
-    function buildDeck() { products.forEach((product, index) => { const card = document.createElement('div'); card.classList.add('card'); card.dataset.index = index; card.innerHTML = `<div class="card-image" style="background-image: url('${product.image}')"></div><div class="card-content"><h3>${product.title}</h3><p>${product.description}</p><div class="price">${product.price}</div></div>`; holoDeck.appendChild(card); }); }
-    
-    function updateDeck() {
-        const cards = document.querySelectorAll('.card');
-        const angle = 360 / cards.length;
-        // 3D wheel ko chota karne ke liye translateZ ki value kam karein mobile par
-        const translateZ = window.innerWidth <= 768 ? '250px' : '350px';
-
-        cards.forEach((card, index) => {
-            const rotateY = (index - currentIndex) * angle;
-            card.style.transform = `rotateY(${rotateY}deg) translateZ(${translateZ})`;
-            card.style.opacity = index === currentIndex ? '1' : '0.4';
-            card.style.pointerEvents = index === currentIndex ? 'all' : 'none';
-        });
-    }
-
-    function showNext() { currentIndex = (currentIndex + 1) % products.length; updateDeck(); }
-    function showPrev() { currentIndex = (currentIndex - 1 + products.length) % products.length; updateDeck(); }
-    
-    // Button clicks
-    nextBtn.addEventListener('click', showNext);
-    prevBtn.addEventListener('click', showPrev);
-
-    // --- SWIPE LOGIC FOR 3D DECK ---
-    let touchstartX = 0;
-    let touchendX = 0;
-    const swipeThreshold = 50; // Min distance for a swipe
-
-    holoDeck.addEventListener('touchstart', e => { touchstartX = e.changedTouches[0].screenX; }, { passive: true });
-    holoDeck.addEventListener('touchend', e => {
-        touchendX = e.changedTouches[0].screenX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        if (touchendX < touchstartX - swipeThreshold) { // Swiped left
-            showNext();
-        }
-        if (touchendX > touchstartX + swipeThreshold) { // Swiped right
-            showPrev();
-        }
-    }
-
-    // --- Popup and Modal Logic [UNCHANGED & MINIFIED] ---
-    const codeModal=document.getElementById("code-modal"),closeModalBtn=document.getElementById("close-modal-btn"),modalTitle=document.getElementById("modal-title"),modalCodeContent=document.getElementById("modal-code-content");holoDeck.addEventListener("click",e=>{const t=e.target.closest(".card");t&&parseInt(t.dataset.index)===currentIndex&&(product=products[currentIndex],modalTitle.textContent=product.title+" - Source",modalCodeContent.textContent=product.code,Prism.highlightElement(modalCodeContent),codeModal.classList.add("show"))}),closeModalBtn.addEventListener("click",()=>{codeModal.classList.remove("show")});const welcomePopup=document.getElementById("welcome-popup"),closePopupBtn=document.getElementById("close-popup-btn"),socialLinks=document.querySelectorAll(".social-link"),clickState={telegram:!1,youtube:!1,tiktok:!1};function checkAllLinksClicked(){return Object.values(clickState).every(e=>!0===e)}socialLinks.forEach(e=>{e.addEventListener("click",t=>{const o=t.currentTarget.id.split("-")[0];clickState[o]||(clickState[o]=!0,t.currentTarget.classList.add("completed"),t.currentTarget.querySelector(".status-icon").textContent="✓"),checkAllLinksClicked()&&(closePopupBtn.disabled=!1)})}),closePopupBtn.addEventListener("click",()=>{closePopupBtn.disabled||(welcomePopup.classList.remove("show"),localStorage.setItem("jafariDealsVisited","true"))});
-
-    // --- Initial Load & Resize ---
-    window.addEventListener('load', () => {
-        buildDeck();
-        updateDeck();
-        closePopupBtn.disabled = true;
-        if (!localStorage.getItem('jafariDealsVisited')) {
-            setTimeout(() => { welcomePopup.classList.add('show'); }, 500);
+        // --- DOOSRI POST ---
+        {
+            image: 'https://cdn.dribbble.com/users/3848835/screenshots/15293118/media/639c05459a352b2f6b8b15a452a35368.png',
+            title: 'SaaS Landing Page',
+            description: 'A stunning landing page template for your next SaaS project. Fully responsive with cool animations.',
+            price: '$29',
+            code: `// JavaScript for scroll animations
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('show-animation');
         }
     });
-    window.addEventListener('resize', updateDeck);
+});
+
+const hiddenElements = document.querySelectorAll('.hidden-animation');
+hiddenElements.forEach((el) => observer.observe(el));`
+        },
+
+        // --- TEESRI POST ---
+        {
+            image: 'https://cdn.dribbble.com/users/418188/screenshots/15103416/media/a953a52093ea6d933e4ad8d89a6913e3.png',
+            title: 'Mobile Banking App',
+            description: 'Source code for a sleek and secure mobile banking application concept. Includes transaction history.',
+            price: '$99',
+            code: `/* CSS for a glassmorphism card */
+.card {
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}`
+        }
+        // Nayi post add karne ke liye, oopar wali post ke baad COMMA (,) lagayein aur
+        // poora { ... } block copy paste karke details badal lein.
+        
+    ]; // <-- YAHAN POSTS KHATAM HOTI HAIN.
+    // =================================================================
+    // =================================================================
+
+    // Baaqi saare code ko na chairein
+    const holoDeck=document.querySelector(".holo-deck"),prevBtn=document.getElementById("prev-btn"),nextBtn=document.getElementById("next-btn");let currentIndex=0;function buildDeck(){holoDeck.innerHTML="";products.forEach((e,t)=>{const o=document.createElement("div");o.classList.add("card"),o.dataset.index=t,o.innerHTML=`<div class="card-image" style="background-image: url('${e.image}')"></div><div class="card-content"><h3>${e.title}</h3><p>${e.description}</p><div class="price">${e.price}</div></div>`,holoDeck.appendChild(o)})}function updateDeck(){const e=document.querySelectorAll(".card"),t=360/e.length,o=window.innerWidth<=768?"250px":"350px";e.forEach((e,c)=>{const d=(c-currentIndex)*t;e.style.transform=`rotateY(${d}deg) translateZ(${o})`,e.style.opacity=c===currentIndex?"1":".4",e.style.pointerEvents=c===currentIndex?"all":"none"})}function showNext(){currentIndex=(currentIndex+1)%products.length,updateDeck()}function showPrev(){currentIndex=(currentIndex-1+products.length)%products.length,updateDeck()}nextBtn.addEventListener("click",showNext),prevBtn.addEventListener("click",showPrev);let touchstartX=0,touchendX=0;const swipeThreshold=50;function handleSwipe(){touchendX<touchstartX-50&&showNext(),touchendX>touchstartX+50&&showPrev()}holoDeck.addEventListener("touchstart",e=>{touchstartX=e.changedTouches[0].screenX},{passive:!0}),holoDeck.addEventListener("touchend",e=>{touchendX=e.changedTouches[0].screenX,handleSwipe()});const codeModal=document.getElementById("code-modal"),closeModalBtn=document.getElementById("close-modal-btn"),copyCodeBtn=document.getElementById("copy-code-btn"),modalTitle=document.getElementById("modal-title"),modalCodeContent=document.getElementById("modal-code-content");holoDeck.addEventListener("click",e=>{const t=e.target.closest(".card");t&&parseInt(t.dataset.index)===currentIndex&&(product=products[currentIndex],modalTitle.textContent=product.title+" - Source",modalCodeContent.textContent=product.code,Prism.highlightElement(modalCodeContent),codeModal.classList.add("show"))}),closeModalBtn.addEventListener("click",()=>{codeModal.classList.remove("show")});copyCodeBtn.addEventListener("click",()=>{navigator.clipboard.writeText(modalCodeContent.textContent);const e=document.getElementById("copy-btn-text");e.textContent="Copied!",copyCodeBtn.style.color="var(--success-color)",setTimeout(()=>{e.textContent="Copy",copyCodeBtn.style.color="var(--silver)"},2e3)});const welcomePopup=document.getElementById("welcome-popup"),closePopupBtn=document.getElementById("close-popup-btn"),socialLinks=document.querySelectorAll(".social-link"),clickState={telegram:!1,youtube:!1,tiktok:!1};function checkAllLinksClicked(){return Object.values(clickState).every(e=>!0===e)}socialLinks.forEach(e=>{e.addEventListener("click",t=>{const o=t.currentTarget.id.split("-")[0];clickState[o]||(clickState[o]=!0,t.currentTarget.classList.add("completed"),t.currentTarget.querySelector(".status-icon").textContent="✓"),checkAllLinksClicked()&&show_9508247().then(()=>{closePopupBtn.disabled=!1,alert("You have seen an ad! Website unlocked.")})})}),closePopupBtn.addEventListener("click",()=>{closePopupBtn.disabled||(welcomePopup.classList.remove("show"),localStorage.setItem("jafariDealsVisited","true"))});window.addEventListener("load",()=>{buildDeck(),updateDeck(),closePopupBtn.disabled=!0,localStorage.getItem("jafariDealsVisited")||setTimeout(()=>{welcomePopup.classList.add("show")},500)}),window.addEventListener("resize",updateDeck);
     </script>
 </body>
 </html>
