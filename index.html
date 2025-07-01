@@ -2,22 +2,19 @@
 <html lang="en">
 <head>
 
-  <script src='//libtl.com/sdk.js' data-zone='9508247' data-sdk='show_9508247'></script>
+  <script>
+        // Yeh sirf testing ke liye hai. Asal function aapke Ad Network ki file se aayega.
+        function show_9508247() {
+            console.log("AD: Rewarded Ad Chal Raha Hai (Testing Mode).");
+            return Promise.resolve(); // For testing, we immediately say the ad was 'watched'.
+        }
+    </script>
 
 
 
 
 
-<script>
-// Rewarded interstitial
 
-show_9508247().then(() => {
-    // You need to add your user reward function here, which will be executed after the user watches the ad.
-    // For more details, please refer to the detailed instructions.
-    alert('You have seen an ad!');
-})
-  </script>
-        
 
 
 
@@ -26,13 +23,11 @@ show_9508247().then(() => {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jafari Deals - The Complete Website</title>
-    
-    <!-- Professional Fonts -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-    
-    <!-- Syntax Highlighting for Code Viewer -->
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 
     <style>
@@ -99,7 +94,7 @@ show_9508247().then(() => {
             -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.4));
             user-select: none;
         }
-        
+
         .card:hover { border-color: var(--gold); box-shadow: 0 0 25px var(--glow-color); }
         .card-image { width: 100%; height: 50%; background-size: cover; background-position: center top; }
         .card-content { padding: 20px; }
@@ -125,7 +120,7 @@ show_9508247().then(() => {
         .social-icon svg { width: 100%; height: 100%; }
         .status-icon { margin-left: auto; width: 24px; height: 24px; border: 2px solid var(--error-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--error-color); font-weight: 700; font-size: 1rem; transition: all .4s ease; }
         .social-link.completed .status-icon { background-color: var(--success-color); border-color: var(--success-color); color: #fff; transform: rotate(360deg); }
-        
+
         .popup-close-btn { background: var(--gold); color: var(--dark-bg); border: none; padding: 14px 40px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all .3s ease; width: 100%; font-size: 1rem; }
         .popup-close-btn:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 0 15px var(--glow-color); }
         .popup-close-btn:disabled { background: #555; color: #999; cursor: not-allowed; opacity: .7; }
@@ -142,17 +137,46 @@ show_9508247().then(() => {
         #close-modal-btn:hover { color: var(--gold); transform: rotate(90deg); }
         .code-viewer { flex-grow: 1; overflow: auto; }
         pre[class*="language-"] { margin: 0 !important; border-radius: 0 !important; height: 100%; background: 0 0 !important; font-family: 'Fira Code', monospace; font-size: 14px; }
-        
+
         #copy-code-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: var(--silver); border-radius: 5px; padding: 5px 10px; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; }
         #copy-code-btn:hover { background: var(--gold); color: var(--dark-bg); }
         #copy-code-btn .copy-icon { width: 16px; height: 16px; }
 
-        @media (max-width: 768px) { body { perspective: 800px; } .card { width: 70vw; height: 400px; margin-top: -200px; margin-left: -35vw; -webkit-box-reflect: unset; } .card-content p { font-size: .8rem; } .nav-btn { top: auto; bottom: 8%; transform: translateY(0); width: 55px; height: 55px; } #prev-btn { left: 10%; } #next-btn { right: 10%; } .welcome-popup h2 { font-size: 1.8rem; } .welcome-popup p { font-size: .9rem; } }
+        @media (max-width: 768px) {
+            body { perspective: 800px; }
+            .card {
+                width: 70vw;
+                height: 400px;
+                margin-top: -200px;
+                margin-left: -35vw;
+                -webkit-box-reflect: unset; /* Remove reflection on mobile */
+            }
+            .card-content p { font-size: .8rem; } /* Smaller font for card description on mobile */
+            .nav-btn {
+                top: auto;
+                bottom: 8%;
+                transform: translateY(0);
+                width: 55px;
+                height: 55px;
+            }
+            #prev-btn { left: 10%; }
+            #next-btn { right: 10%; }
+            .welcome-popup h2 { font-size: 1.8rem; }
+            .welcome-popup p { font-size: .9rem; }
+            .code-modal-header {
+                flex-direction: column; /* Stack elements vertically in modal header on small screens */
+                gap: 10px;
+            }
+            #copy-code-btn {
+                width: 100%; /* Make copy button full width */
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 
 <body>
-  
+
 
     <div class="main-container">
         <div style="position: fixed; top: 20px; left: 20px; z-index: 500;">
@@ -186,7 +210,6 @@ show_9508247().then(() => {
         </div>
     </div>
 
-    <!-- Scripts for functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
@@ -219,11 +242,9 @@ show_9508247().then(() => {
             price: '$49',
             code: `<div class="dashboard-container">
     <aside class="sidebar">
-        <!-- Sidebar content goes here -->
-    </aside>
+        </aside>
     <main class="main-content">
-        <!-- Main dashboard content -->
-    </main>
+        </main>
 </div>`
         },
 
@@ -264,7 +285,7 @@ hiddenElements.forEach((el) => observer.observe(el));`
         }
         // Nayi post add karne ke liye, oopar wali post ke baad COMMA (,) lagayein aur
         // poora { ... } block copy paste karke details badal lein.
-        
+
     ]; // <-- YAHAN POSTS KHATAM HOTI HAIN.
     // =================================================================
     // =================================================================
