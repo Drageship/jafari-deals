@@ -8,16 +8,19 @@
         Is comment ko hata kar yahan woh script paste karein.
     -->
  <script src='//libtl.com/sdk.js' data-zone='9508247' data-sdk='show_9508247'></script>
-    <script>
-// Rewarded Popup
+  
+  <script>
 
-show_9508247('pop').then(() => {
-    // user watch ad till the end or close it in interstitial format
-    // your code to reward user for rewarded format
-}).catch(e => {
-    // user get error during playing ad
-    // do nothing or whatever you want
-})     
+
+// Rewarded interstitial
+
+show_9508247().then(() => {
+    // You need to add your user reward function here, which will be executed after the user watches the ad.
+    // For more details, please refer to the detailed instructions.
+    alert('You have seen an ad!');
+})
+
+        
     </script>
 
 
