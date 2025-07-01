@@ -1,38 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script src='//libtl.com/sdk.js' data-zone='9508247' data-sdk='show_9508247'></script>
-  
-<script>
 
-// Rewarded interstitial
-
-show_9508247().then(() => {
-    // You need to add your user reward function here, which will be executed after the user watches the ad.
-    // For more details, please refer to the detailed instructions.
-    alert('You have seen an ad!');
-})
-
-        </script>
-
-        
-
-
-
-
-
-
-
-
+  <!-- 
+        ZAROORI HIDAYAT:
+        Yeh script aapke Ad Network se milegi. Iske bina ad kaam nahi karega.
+        Is comment ko hata kar yahan woh script paste karein.
+    -->
+    <!-- <script src="https://ad.provider.com/library.js"></script> -->
+    <script>
+        // Yeh sirf testing ke liye hai. Asal function aapke Ad Network ki file se aayega.
+        function show_9508247() {
+            console.log("AD: Rewarded Ad Chal Raha Hai (Testing Mode).");
+            return Promise.resolve(); // For testing, we immediately say the ad was 'watched'.
+        }
+    </script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jafari Deals - The Complete Website</title>
-
+    
+    <!-- Professional Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Fira+Code:wght@400;600&display=swap" rel="stylesheet">
-
+    
+    <!-- Syntax Highlighting for Code Viewer -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 
     <style>
@@ -99,7 +92,7 @@ show_9508247().then(() => {
             -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.4));
             user-select: none;
         }
-
+        
         .card:hover { border-color: var(--gold); box-shadow: 0 0 25px var(--glow-color); }
         .card-image { width: 100%; height: 50%; background-size: cover; background-position: center top; }
         .card-content { padding: 20px; }
@@ -125,7 +118,7 @@ show_9508247().then(() => {
         .social-icon svg { width: 100%; height: 100%; }
         .status-icon { margin-left: auto; width: 24px; height: 24px; border: 2px solid var(--error-color); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--error-color); font-weight: 700; font-size: 1rem; transition: all .4s ease; }
         .social-link.completed .status-icon { background-color: var(--success-color); border-color: var(--success-color); color: #fff; transform: rotate(360deg); }
-
+        
         .popup-close-btn { background: var(--gold); color: var(--dark-bg); border: none; padding: 14px 40px; border-radius: 50px; cursor: pointer; font-weight: 600; transition: all .3s ease; width: 100%; font-size: 1rem; }
         .popup-close-btn:hover:not(:disabled) { transform: scale(1.05); box-shadow: 0 0 15px var(--glow-color); }
         .popup-close-btn:disabled { background: #555; color: #999; cursor: not-allowed; opacity: .7; }
@@ -142,47 +135,110 @@ show_9508247().then(() => {
         #close-modal-btn:hover { color: var(--gold); transform: rotate(90deg); }
         .code-viewer { flex-grow: 1; overflow: auto; }
         pre[class*="language-"] { margin: 0 !important; border-radius: 0 !important; height: 100%; background: 0 0 !important; font-family: 'Fira Code', monospace; font-size: 14px; }
-
+        
         #copy-code-btn { background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); color: var(--silver); border-radius: 5px; padding: 5px 10px; cursor: pointer; transition: all 0.2s ease; display: flex; align-items: center; gap: 8px; }
         #copy-code-btn:hover { background: var(--gold); color: var(--dark-bg); }
         #copy-code-btn .copy-icon { width: 16px; height: 16px; }
 
+        /* ================================================= */
+        /* === MOBILE KE LIYE BEHTAR STYLES (YAHAN HAIN) === */
+        /* ================================================= */
         @media (max-width: 768px) {
-            body { perspective: 800px; }
+            body {
+                perspective: 1000px; /* 3D effect thora kam kiya */
+                /* === ADDITION: Mobile par text ko auto-scale hone se rokna === */
+                -webkit-text-size-adjust: 100%;
+                text-size-adjust: 100%;
+            }
+
+            .main-container {
+                /* === ADDITION: Tap karne par grey/blue box na aaye === */
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            .holo-deck {
+                height: 70vh; /* Carousel ki height screen ke hisab se set ki */
+            }
             .card {
-                width: 70vw;
-                height: 400px;
-                margin-top: -200px;
-                margin-left: -35vw;
-                -webkit-box-reflect: unset; /* Remove reflection on mobile */
+                width: 80vw; /* Card ko thora aur bara kiya */
+                height: 65vh; /* Card ki height bhi screen ke mutabiq */
+                margin-top: -32.5vh; /* Uper se center kiya */
+                margin-left: -40vw; /* Side se center kiya */
+                -webkit-box-reflect: unset; /* Mobile par reflection hata diya */
             }
-            .card-content p { font-size: .8rem; } /* Smaller font for card description on mobile */
+            .card-content h3 {
+                font-size: 1.1rem; /* Card ka title thora behtar kiya */
+            }
+            .card-content p {
+                font-size: 0.85rem; /* Card ki description ka font size */
+            }
             .nav-btn {
-                top: auto;
-                bottom: 8%;
+                top: auto; /* Buttons ko neeche shift kiya */
+                bottom: 5%;
                 transform: translateY(0);
-                width: 55px;
-                height: 55px;
+                width: 60px; /* Buttons ko bara kiya */
+                height: 60px;
+                font-size: 2.5rem; /* Button ke andar ka icon bara kiya */
             }
-            #prev-btn { left: 10%; }
-            #next-btn { right: 10%; }
-            .welcome-popup h2 { font-size: 1.8rem; }
-            .welcome-popup p { font-size: .9rem; }
+            #prev-btn {
+                left: 5%; /* Buttons ke darmiyan faasla barhaya */
+            }
+            #next-btn {
+                right: 5%;
+            }
+            .welcome-popup {
+                padding: 25px; /* Popup ke andar space kam ki */
+                width: 95%; /* Popup ko thora aur chaura kiya */
+            }
+            .welcome-popup h2 {
+                font-size: 1.6rem;
+            }
+            .welcome-popup p {
+                font-size: 0.9rem;
+            }
+            .social-link {
+                padding: 10px 15px; /* Social links ko thora compact kiya */
+            }
+            .code-modal-content {
+                height: 90vh; /* Code viewer ko screen par poora phelaya */
+                width: 95%;
+            }
             .code-modal-header {
-                flex-direction: column; /* Stack elements vertically in modal header on small screens */
-                gap: 10px;
+                padding: 12px 15px;
             }
-            #copy-code-btn {
-                width: 100%; /* Make copy button full width */
-                justify-content: center;
+            .code-modal-header h3 {
+                font-size: 1.1rem;
+            }
+            .code-viewer {
+                /* === ADDITION: Scrolling ko naram (smooth) banaya === */
+                -webkit-overflow-scrolling: touch;
+            }
+            pre[class*="language-"] {
+                font-size: 12.5px; /* Code ka font thora chota kiya taake zyada nazar aye */
+                line-height: 1.4;
+            }
+
+            /* === ADDITION: Jab phone tairha (LANDSCAPE) ho === */
+            @media (orientation: landscape) {
+                .holo-deck {
+                    height: 85vh; /* Carousel ki height thori barhayi */
+                }
+                .card {
+                    width: 50vw; /* Card ko chaura kam kiya */
+                    height: 75vh; /* Card ki lambai barhayi */
+                    margin-top: -37.5vh; /* Center kiya */
+                    margin-left: -25vw;  /* Center kiya */
+                }
+                .card-content {
+                    padding: 15px;
+                }
             }
         }
     </style>
 </head>
 
 <body>
-
-
+  
     <div class="main-container">
         <div style="position: fixed; top: 20px; left: 20px; z-index: 500;">
             <h1 style="font-size: 1.5rem; color: var(--silver);">JAFARI <span style="color: var(--gold);">DEALS</span></h1>
@@ -215,6 +271,7 @@ show_9508247().then(() => {
         </div>
     </div>
 
+    <!-- Scripts for functionality -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
     <script>
@@ -247,9 +304,11 @@ show_9508247().then(() => {
             price: '$49',
             code: `<div class="dashboard-container">
     <aside class="sidebar">
-        </aside>
+        <!-- Sidebar content goes here -->
+    </aside>
     <main class="main-content">
-        </main>
+        <!-- Main dashboard content -->
+    </main>
 </div>`
         },
 
@@ -290,13 +349,13 @@ hiddenElements.forEach((el) => observer.observe(el));`
         }
         // Nayi post add karne ke liye, oopar wali post ke baad COMMA (,) lagayein aur
         // poora { ... } block copy paste karke details badal lein.
-
+        
     ]; // <-- YAHAN POSTS KHATAM HOTI HAIN.
     // =================================================================
     // =================================================================
 
     // Baaqi saare code ko na chairein
-    const holoDeck=document.querySelector(".holo-deck"),prevBtn=document.getElementById("prev-btn"),nextBtn=document.getElementById("next-btn");let currentIndex=0;function buildDeck(){holoDeck.innerHTML="";products.forEach((e,t)=>{const o=document.createElement("div");o.classList.add("card"),o.dataset.index=t,o.innerHTML=`<div class="card-image" style="background-image: url('${e.image}')"></div><div class="card-content"><h3>${e.title}</h3><p>${e.description}</p><div class="price">${e.price}</div></div>`,holoDeck.appendChild(o)})}function updateDeck(){const e=document.querySelectorAll(".card"),t=360/e.length,o=window.innerWidth<=768?"250px":"350px";e.forEach((e,c)=>{const d=(c-currentIndex)*t;e.style.transform=`rotateY(${d}deg) translateZ(${o})`,e.style.opacity=c===currentIndex?"1":".4",e.style.pointerEvents=c===currentIndex?"all":"none"})}function showNext(){currentIndex=(currentIndex+1)%products.length,updateDeck()}function showPrev(){currentIndex=(currentIndex-1+products.length)%products.length,updateDeck()}nextBtn.addEventListener("click",showNext),prevBtn.addEventListener("click",showPrev);let touchstartX=0,touchendX=0;const swipeThreshold=50;function handleSwipe(){touchendX<touchstartX-50&&showNext(),touchendX>touchstartX+50&&showPrev()}holoDeck.addEventListener("touchstart",e=>{touchstartX=e.changedTouches[0].screenX},{passive:!0}),holoDeck.addEventListener("touchend",e=>{touchendX=e.changedTouches[0].screenX,handleSwipe()});const codeModal=document.getElementById("code-modal"),closeModalBtn=document.getElementById("close-modal-btn"),copyCodeBtn=document.getElementById("copy-code-btn"),modalTitle=document.getElementById("modal-title"),modalCodeContent=document.getElementById("modal-code-content");holoDeck.addEventListener("click",e=>{const t=e.target.closest(".card");t&&parseInt(t.dataset.index)===currentIndex&&(product=products[currentIndex],modalTitle.textContent=product.title+" - Source",modalCodeContent.textContent=product.code,Prism.highlightElement(modalCodeContent),codeModal.classList.add("show"))}),closeModalBtn.addEventListener("click",()=>{codeModal.classList.remove("show")});copyCodeBtn.addEventListener("click",()=>{navigator.clipboard.writeText(modalCodeContent.textContent);const e=document.getElementById("copy-btn-text");e.textContent="Copied!",copyCodeBtn.style.color="var(--success-color)",setTimeout(()=>{e.textContent="Copy",copyCodeBtn.style.color="var(--silver)"},2e3)});const welcomePopup=document.getElementById("welcome-popup"),closePopupBtn=document.getElementById("close-popup-btn"),socialLinks=document.querySelectorAll(".social-link"),clickState={telegram:!1,youtube:!1,tiktok:!1};function checkAllLinksClicked(){return Object.values(clickState).every(e=>!0===e)}socialLinks.forEach(e=>{e.addEventListener("click",t=>{const o=t.currentTarget.id.split("-")[0];clickState[o]||(clickState[o]=!0,t.currentTarget.classList.add("completed"),t.currentTarget.querySelector(".status-icon").textContent="✓"),checkAllLinksClicked()&&show_9508247().then(()=>{closePopupBtn.disabled=!1,alert("You have seen an ad! Website unlocked.")})})}),closePopupBtn.addEventListener("click",()=>{closePopupBtn.disabled||(welcomePopup.classList.remove("show"),localStorage.setItem("jafariDealsVisited","true"))});window.addEventListener("load",()=>{buildDeck(),updateDeck(),closePopupBtn.disabled=!0,localStorage.getItem("jafariDealsVisited")||setTimeout(()=>{welcomePopup.classList.add("show")},500)}),window.addEventListener("resize",updateDeck);
+    const holoDeck=document.querySelector(".holo-deck"),prevBtn=document.getElementById("prev-btn"),nextBtn=document.getElementById("next-btn");let currentIndex=0;function buildDeck(){holoDeck.innerHTML="";products.forEach((e,t)=>{const o=document.createElement("div");o.classList.add("card"),o.dataset.index=t,o.innerHTML=`<div class="card-image" style="background-image: url('${e.image}')"></div><div class="card-content"><h3>${e.title}</h3><p>${e.description}</p><div class="price">${e.price}</div></div>`,holoDeck.appendChild(o)})}function updateDeck(){const e=document.querySelectorAll(".card"),t=360/e.length,o=window.innerWidth<=768?window.innerWidth<=500&&window.innerHeight>window.innerWidth?"85vw":"50vw":"350px";e.forEach((e,c)=>{const d=(c-currentIndex)*t,n=window.innerWidth<=768?window.innerWidth/2/Math.tan(Math.PI/e.length):350;e.style.transform=`rotateY(${d}deg) translateZ(${n}px)`}),document.querySelectorAll(".card").forEach((e,t)=>{e.style.opacity=t===currentIndex?"1":".4",e.style.pointerEvents=t===currentIndex?"all":"none"})}function showNext(){currentIndex=(currentIndex+1)%products.length,updateRotation()}function showPrev(){currentIndex=(currentIndex-1+products.length)%products.length,updateRotation()}function updateRotation(){const e=360/products.length;holoDeck.style.transform=`rotateY(${-currentIndex*e}deg)`}nextBtn.addEventListener("click",showNext),prevBtn.addEventListener("click",showPrev);let touchstartX=0,touchendX=0;const swipeThreshold=50;function handleSwipe(){touchendX<touchstartX-50&&showNext(),touchendX>touchstartX+50&&showPrev()}holoDeck.addEventListener("touchstart",e=>{touchstartX=e.changedTouches[0].screenX},{passive:!0}),holoDeck.addEventListener("touchend",e=>{touchendX=e.changedTouches[0].screenX,handleSwipe()});const codeModal=document.getElementById("code-modal"),closeModalBtn=document.getElementById("close-modal-btn"),copyCodeBtn=document.getElementById("copy-code-btn"),modalTitle=document.getElementById("modal-title"),modalCodeContent=document.getElementById("modal-code-content");function adjustCardPositions(){const e=document.querySelectorAll(".card"),t=360/e.length,o=window.innerWidth<=768?window.innerWidth/2.3/Math.tan(Math.PI/e.length):350;e.forEach((e,c)=>{const d=(c-0)*t;e.style.transform=`rotateY(${d}deg) translateZ(${o}px)`})}holoDeck.addEventListener("click",e=>{const t=e.target.closest(".card");if(!t)return;const o=parseInt(t.dataset.index);o===currentIndex?(product=products[currentIndex],modalTitle.textContent=product.title+" - Source",modalCodeContent.textContent=product.code,Prism.highlightElement(modalCodeContent),codeModal.classList.add("show")):(currentIndex=o,updateRotation())}),closeModalBtn.addEventListener("click",()=>{codeModal.classList.remove("show")});copyCodeBtn.addEventListener("click",()=>{navigator.clipboard.writeText(modalCodeContent.textContent);const e=document.getElementById("copy-btn-text");e.textContent="Copied!",copyCodeBtn.style.color="var(--success-color)",setTimeout(()=>{e.textContent="Copy",copyCodeBtn.style.color="var(--silver)"},2e3)});const welcomePopup=document.getElementById("welcome-popup"),closePopupBtn=document.getElementById("close-popup-btn"),socialLinks=document.querySelectorAll(".social-link"),clickState={telegram:!1,youtube:!1,tiktok:!1};function checkAllLinksClicked(){return Object.values(clickState).every(e=>!0===e)}socialLinks.forEach(e=>{e.addEventListener("click",t=>{const o=t.currentTarget.id.split("-")[0];clickState[o]||(clickState[o]=!0,t.currentTarget.classList.add("completed"),t.currentTarget.querySelector(".status-icon").textContent="✓"),checkAllLinksClicked()&&show_9508247().then(()=>{closePopupBtn.disabled=!1,console.log("Ad viewed, button enabled.")})})}),closePopupBtn.addEventListener("click",()=>{closePopupBtn.disabled||(welcomePopup.classList.remove("show"),localStorage.setItem("jafariDealsVisited","true"))});function init(){buildDeck(),adjustCardPositions(),updateRotation(),closePopupBtn.disabled=!0,localStorage.getItem("jafariDealsVisited")||setTimeout(()=>{welcomePopup.classList.add("show")},500)}window.addEventListener("load",init),window.addEventListener("resize",()=>{adjustCardPositions(),updateRotation()});
     </script>
 </body>
 </html>
